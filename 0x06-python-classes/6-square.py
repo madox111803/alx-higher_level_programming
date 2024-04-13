@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""Access and update private attribute"""
+"""Coordinates of a square"""
 
 
 class Square:
     """Private instance attribute: size
-    Instantiation with area method """
+    Instantiation with area and position method """
 
     def __init__(self, size=0, position=(0, 0)):
         """Initializes attribute size """
-        self.__size = size
+        self.size = size
         self.position = position
 
     def area(self):
@@ -17,7 +17,7 @@ class Square:
 
     @property
     def size(self):
-        """Setter for square"""
+        """Getter for square"""
         return self.__size
 
     @size.setter
@@ -25,23 +25,24 @@ class Square:
         """Initializes attribute size """
         if (type(value) is not int):
             raise TypeError("size must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
-        else:
-            self.__size = value
+        self.__size = value
+
     @property
     def position(self):
-        """getter for position"""
+        """Getter for position"""
         return self.__position
+
     @position.setter
     def position(self, value):
-        """init attribute position"""
-        if len(value) is not 2 :
-            raise TypeError ("position must be a tuple of 2 positive integers")
-        elif (type(value[0]) is not int or value[0] < 0):
-            raise TypeError ("position must be a tuple of 2 positive integers")
-        elif (type(value[1]) is not int or value[1] < 0):
-            raise TypeError ("position must be a tuple of 2 positive integers")
+        """Initializes attribute position"""
+        if len(value) is not 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if (type(value[0]) is not int or value[0] < 0):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if (type(value[1]) is not int or value[1] < 0):
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
     def my_print(self):
