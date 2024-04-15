@@ -2,5 +2,13 @@
 """Module implementing function to determine class membership"""
 
 def is_kind_of_class(obj, a_class):
-    """Returns True if type(obj) is a_class or inherits from a_class"""
+    """Finds if obj is an instance of a_class or a class
+    inherited from a_class
+
+    Args:
+        - obj: object to look at
+        - a_class: class to evaluate
+
+    Returns: True or False
+    """
     return isinstance(obj, a_class)
