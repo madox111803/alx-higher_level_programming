@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module Rectangle
+"""Module 9-rectangle
 Creates a Rectangle class
 """
 
@@ -9,9 +9,10 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
     """Represents a rectangle
-    Private instance attributes:
+    Private instances attributes:
         - width
         - height
+    Public method area()
     Inherits from BaseGeometry
     """
 
@@ -27,6 +28,7 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
         self.__width = width
         self.__height = height
+
     def __str__(self):
         """Returns a formatted string"""
 
