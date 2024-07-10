@@ -1,12 +1,8 @@
 #!/usr/bin/node
-const a = [];
 let msg = '';
-process.argv.forEach((val) => {
-  a.push(`${val}`);
-});
-if (a.length === 2) {
-  msg = 'No argument';
+if (process.argv[2] === undefined) {
+  mssg = 'No argument';
 } else {
-  msg = a[2];
+  mss process.argv[2];
 }
-console.log(msg);
+console.log(mssg);
